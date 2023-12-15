@@ -12,10 +12,8 @@
 #include "main.h"
 
 
-
-#define TIME_ZONE (+8)   //Beijing Time
+#define TIME_ZONE (+2)   //Beijing Time
 #define YEAR_BASE (2000) //date in GPS starts from 2000
-
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -52,18 +50,6 @@ QueueHandle_t gps_data_queue = NULL;
 static const char *TAG_WIFI = "webserver";
 
 
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-//nmea_parser_config_t config;
-//nmea_parser_handle_t nmea_hdl;
-
-/////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief GPS Event Handler
@@ -127,6 +113,8 @@ void turn_off_gps(void)
 }
 // --------------------------------------------------------------------------------------------------
 
+
+
 static void gps_log_task(void *arg)
 {
 	static const char *TAG = "FILE";
@@ -185,7 +173,7 @@ static void gps_log_task(void *arg)
 					"%d:%d:%d %d:%d:%d latitude:%.06f°N longitude:%.06f°E altitude:%.02fm speed:%.02fm\n"
 					,
 					qLogGPSData_t.date.year, qLogGPSData_t.date.month, qLogGPSData_t.date.day,
-					qLogGPSData_t.time.hour+2, qLogGPSData_t.time.minute, qLogGPSData_t.time.second,
+					qLogGPSData_t.time.hour+TIME_ZONE, qLogGPSData_t.time.minute, qLogGPSData_t.time.second,
 					qLogGPSData_t.latitude,qLogGPSData_t.longitude,qLogGPSData_t.altitude, qLogGPSData_t.speed
 
 			);
@@ -206,7 +194,7 @@ static void gps_log_task(void *arg)
 				strcpy(name_of_file, path_to_log_file);
 				strcat(name_of_file, str_1);
 
-				sprintf(str_h ,"%d_", qLogGPSData_t.time.hour+2);
+				sprintf(str_h ,"%d_", qLogGPSData_t.time.hour+TIME_ZONE);
 				sprintf(str_m ,"%d_",qLogGPSData_t.time.minute);
 				sprintf(str_s ,"%d",qLogGPSData_t.time.second);
 

@@ -15,11 +15,11 @@ For work with SPIFFs using esptool.exe and mkspiffs.exe. They locate into mkspif
 
 Write files from "files" folder into spiffs1.bin image file.
 
-.\mkspiffs.exe -c files -b 4096 -p 256 -s 0xF0000 spiffs1.bin
+.\mkspiffs.exe -c files -b 4096 -p 256 -s 0x1E0000 spiffs1.bin
 
 or
 
-mkspiffs -c files -b 4096 -p 256 -s 0xF0000 spiffs1.bin
+mkspiffs -c files -b 4096 -p 256 -s 0x1E0000 spiffs1.bin
 
 Write file image spiffs1.bin into flash memory.
 
@@ -28,7 +28,7 @@ esptool --chip esp32 --port COM5 --baud 921600 write_flash -z 0x110000 spiffs1.b
 
 Read data from ESP32 flash memory and make image file spiffs1.bin.
 
-RUN: esptool -b 921600 --port COM5 read_flash 0x110000 0xF0000 spiffs1.bin
+RUN: esptool -b 921600 --port COM5 read_flash 0x110000 0x1E0000 spiffs1.bin
 
 Red file from image spiffs1.bin and save it into "files" folder.
 
