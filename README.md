@@ -6,7 +6,7 @@ example log asile into file:
 2023:12:15 12:55:22 latitude:49.5XXXXN longitude:23.9XXXXE altitude:264.30m speed:0.07m
 ...
 
-# ----------------------------------------------------------------------------------------
+--------------------------------------------------------------------------
 For work with SPIFFs using esptool.exe and mkspiffs.exe. They locate into mkspiffsmy folder.
 
 Write files from "files" folder into spiffs1.bin image file.
