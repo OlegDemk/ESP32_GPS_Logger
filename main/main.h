@@ -22,6 +22,10 @@
 
 #include "driver/gpio.h"
 #include "GPS/nmea_parser.h"
+
+#include "gpio/gpio.h"
+#include "WiFi_AP/wifi_ap.h"
+
 /*
  * main.h
  *
