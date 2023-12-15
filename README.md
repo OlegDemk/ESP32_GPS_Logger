@@ -1,13 +1,10 @@
 # --- ESP32 4Mb + GPS module(GY-GPS6MV2) ---
-Log data using internal build in flash mamory (SPIFFs). 
-
-
+Data logging using  built internal flash memory (SPIFFs).
 
 example log asile into file:
 2023:12:15 12:55:21 latitude:49.5XXXXN longitude:23.9XXXXE altitude:264.30m speed:0.07m
 2023:12:15 12:55:22 latitude:49.5XXXXN longitude:23.9XXXXE altitude:264.30m speed:0.07m
 ...
-
 
 
 For work with SPIFFs using esptool.exe and mkspiffs.exe. They locate into mkspiffsmy folder.
